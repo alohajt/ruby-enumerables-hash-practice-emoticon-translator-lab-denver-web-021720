@@ -15,7 +15,7 @@
  "wink"=>[";)", "(^_-)"]}
  
 require "yaml"
-
+require 'pp'
 
 def load_library(path)
   emoticons = YAML.load_file(path)
@@ -28,6 +28,7 @@ def load_library(path)
     emoticon_hash["get_emoticon"][emoticon_set.first] = emoticon_set.last
     emoticon_hash["get_meaning"][emoticon_set.last] = english_word
   end
+  pp emoticon_hash
   emoticon_hash
 end
 
